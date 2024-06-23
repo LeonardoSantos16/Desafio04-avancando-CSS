@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    --moz-osx-font-smoothing: grayscale;
+}
+
+
+:root{
+    --brand-white: hsl(0, 0%, 100%);
+    --brand-blue: hsl(195, 91%, 25%);
+    --input-background: hsla(0, 0%, 100%, 0.2);
+
+    font-size: 62.5%;
+    --brand-text: "Mulish", sans-serif;
+
+}
+
+body{
+    background-color: var(--brand-white);
+
+    font-size: 1.6rem;
+    font-family: var(--brand-text);
+}
+
+/*Header*/
+
+header, footer{
+    background-color: var(--brand-blue); 
+    max-height: 7.2rem;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 2.4rem;
+    margin: 0 auto;
+    padding: 1.6rem 3.2rem;   
+    min-width: 2.4rem;
+    align-items: center;
+}
+
+.input-wrapper input{
+    border-radius: 0.4rem;
+    background: var(--input-background);
+    border: none;
+    padding: 1.2rem 0.875rem;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    line-height: 100%;
+    
+    color: var(--brand-white);
+}
+
+.input-wrapper label{
+    color: var(--brand-white);
+    padding: 1.2rem 1.4rem;
+    
+    overflow: hidden;
+    position: absolute;
+}
+
+/*main*/
+
+main, aside{
+    max-width: 43rem;
+    margin: 0 auto;
+}
+main{
+    margin-bottom: 3.4rem;
+}
+
+main img {
+    width: 100%;
+    height: auto;
+
+}
+button{
+    margin-top: .8rem;
+    padding: 0;
+    height: 4rem;
+    width: 4rem;
+    border: none;
+}
+
+.title{
+    margin: 3.1rem 0;
+    
+}
+
+h2{
+    font-size: 2.4rem
+}
+
+/*aside*/
+aside{
+    margin-bottom: 3.9rem;
+}
+
+section{
+
+    margin-top: 3.2rem;
+    display: grid;
+    gap: 3.2rem;
+}
+
+.news{
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    gap: 1.6rem;
+    
+}
+h3{
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+aside p{
+    font-size: 1.4rem;
+}
+
+.news img{
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+}
+
+/*footer*/
+footer p{
+    padding: 2.6rem;
+    color: var(--brand-white);
+    text-align: center;
+}
+
+@media (min-width: 1120px){
+    #app {
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "main aside"
+        "footer footer";
+    
+        gap: 3.4rem;
+      }
+    main{
+        max-width: initial;
+        padding: initial;
+        margin: initial;
+     }
+    
+    header {
+        grid-area: header;
+    }
+
+    .input-wrapper input{
+        width: 100rem
+    }
+
+    main{
+        grid-area: main;
+        max-width: 80rem;
+        margin-left: auto;
+    }
+
+    .title{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+    }
+
+    aside{
+        grid-area: aside;
+        max-width: 38rem;     
+        margin: initial;
+    }
+
+    footer{
+        grid-area: footer;
+        text-align: center;
+    }
+      
+    /*animacao*/
+    header {
+        animation: fromTop 400ms 100ms forwards;
+    }
+    
+    main,
+    footer {
+        animation: fromBottom 400ms 100ms backwards;
+    }
+
+    aside{
+        animation: fromRight 400ms 100ms backwards;
+    }
+    
+    @keyframes fromTop {
+        from {
+           
+            transform: translateY(-100%);
+        }
+    }
+    
+    @keyframes fromRight {
+        from{
+            transform: translatex(100%);
+        }
+    }
+
+    @keyframes fromBottom {
+        from {
+            transform: translateY(100px);
+        }
+    }
+}
+
+
+
